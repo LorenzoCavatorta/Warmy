@@ -1,0 +1,6 @@
+component: switch
+Given: switch is connected to a power cable (one cable in, one cable out)
+       switch is connected to control_unit
+When:  control_unit sends a "on" signal
+Then:  switch lets current flow between the two power cables
+
