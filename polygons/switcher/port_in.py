@@ -1,8 +1,8 @@
 class port(object):
 
     def __init__(self):
-        pass
+        self.status = None
 
     def read(self):
-        pass
+        return self.status
 
