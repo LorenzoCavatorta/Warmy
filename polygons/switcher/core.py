@@ -1,3 +1,5 @@
-
+from port_in import port
 class Core(object):
-    pass
+
+    def __init__(self):
+        self.port_in = port()

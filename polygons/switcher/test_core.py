@@ -3,5 +3,6 @@ from core import Core
 class TestCore(TestCase):
 
     def test_read_port_in(self):
-        pass
+        switcher = Core()
+        switcher.port_in.read()
 
