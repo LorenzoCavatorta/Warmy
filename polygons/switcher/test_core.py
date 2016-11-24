@@ -15,9 +15,9 @@ class TestCore(TestCase):
         with self.assertRaises(ValueError):
             self.switcher.port_in.read()
 
-    def test_set_port_in_on(self):
-        self.switcher.port_in.set_on()
-        self.assertTrue(self.switcher.port_in.read() == 1)
+#    def test_set_port_in_on(self):
+#        self.switcher.port_in.set_on()
+#        self.assertTrue(self.switcher.port_in.read() == 1)
 
     def test_set_port_in_off(self):
         self.switcher.port_in.set_off()
@@ -41,7 +41,8 @@ class TestCore(TestCase):
         with self.assertRaises(ValueError):
             self.switcher.port_out.read()
 
-'''    def test_on_from_port_in_to_port_out(self):
+    def test_on_from_port_in_to_port_out(self):
         self.switcher.port_in.set_on()
-        self.assertTrue(self.switcher.port_out.read() == 1)
-'''
+        on_signal_is_out_and_in_port_is_reset = self.switcher.port_out.read() == 1 and self.switcher.port_in.read() == 0
+        self.assertTrue(on_signal_is_out_and_in_port_is_reset)
+
