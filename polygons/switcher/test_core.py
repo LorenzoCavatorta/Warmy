@@ -41,6 +41,6 @@ class TestCore(TestCase):
         with self.assertRaises(ValueError):
             self.switcher.port_out.read()
 
-#    def test_on_from_port_in_to_port_out(self):
-#        self.switcher.port_in.set_on()
-#        self.assertTrue(self.switcher.port_out.read() == 1)
+    def test_on_from_port_in_to_port_out(self):
+        self.switcher.port_in.set_on()
+        self.assertTrue(self.switcher.port_out.read() == 1)
