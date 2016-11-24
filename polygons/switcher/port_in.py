@@ -14,3 +14,6 @@ class port(object):
 
     def set_on(self):
         self._status = 1
+
+    def set_off(self):
+        self._status = 0
