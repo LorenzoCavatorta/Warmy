@@ -11,7 +11,7 @@ class TestCore(TestCase):
 
     def test_port_in_non_boolean(self):
         #todo: let down gracefully and default to 0
-        self.switcher.port_in.status = 7
+        self.switcher.port_in._status = 7
         with self.assertRaises(ValueError):
             self.switcher.port_in.read()
 
@@ -37,6 +37,10 @@ class TestCore(TestCase):
 
     def test_port_out_non_boolean(self):
         #todo: let down gracefully and default to 0
-        self.switcher.port_out.status = 2.5
+        self.switcher.port_out._status = 2.5
         with self.assertRaises(ValueError):
             self.switcher.port_out.read()
+
+#    def test_on_from_port_in_to_port_out(self):
+#        self.switcher.port_in.set_on()
+#        self.assertTrue(self.switcher.port_out.read() == 1)

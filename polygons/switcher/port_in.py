@@ -1,6 +1,6 @@
 from port import Port
 
-class port_in(Port):
+class PortIn(Port):
 
     def __init__(self):
         super().__init__()

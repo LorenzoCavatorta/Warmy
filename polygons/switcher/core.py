@@ -1,7 +1,9 @@
-from port_in import port_in 
-from port_out import port_out 
+from port_in import PortIn
+from port_out import PortOut
 class Core(object):
 
     def __init__(self):
-        self.port_in = port_in()
-        self.port_out = port_out()
+        self.port_in = PortIn()
+        self.port_out = PortOut()
+
+        
