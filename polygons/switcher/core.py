@@ -1,0 +1,3 @@
+
+class Core(object):
+    pass
