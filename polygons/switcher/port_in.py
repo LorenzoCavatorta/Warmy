@@ -6,3 +6,5 @@ class port(object):
     def read(self):
         return self.status
 
+    def set_on(self):
+        self.status = 1
