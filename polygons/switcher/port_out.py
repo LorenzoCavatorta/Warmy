@@ -1,6 +1,9 @@
-from port import Port
+from port import PortBoolean as Port
 
 class PortOut(Port):
 
     def __init__(self):
-        super().__init__()
+        self.file_location = '/tmp/port_out.status'
+        super().__init__(self.file_location)
+
+    

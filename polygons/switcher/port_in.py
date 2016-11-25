@@ -1,8 +1,9 @@
-from port import Port
+from port import PortBoolean as Port
 
 class PortIn(Port):
 
     def __init__(self):
-        super().__init__()
+        self.file_location = '/tmp/port_in.status'
+        super().__init__(self.file_location)
 
     
