@@ -37,8 +37,15 @@ class TestCore(TestCase):
 
     def test_on_from_port_in_to_port_out(self):
         #todo: move this test to a service version where you don't have to invoke the in_to_out method
+        self.switcher.port_out.set_off()
         self.switcher.port_in.set_on()
-        self.switcher.process_in_on()
+        self.switcher.flow_signal()
         on_signal_is_out_and_in_port_is_reset = self.switcher.port_out.read() == 1 and self.switcher.port_in.read() == 0
         self.assertTrue(on_signal_is_out_and_in_port_is_reset)
 
+    def test_off_from_port_in_to_port_out(self):
+        self.switcher.port_out.set_on()
+        self.switcher.port_in.set_off()
+        self.switcher.flow_signal()
+        self.assertTrue(self.switcher.port_out.read() == 0)
+        

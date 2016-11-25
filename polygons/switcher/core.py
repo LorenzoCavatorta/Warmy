@@ -7,11 +7,12 @@ class Core(object):
         self.port_in = PortIn()
         self.port_out = PortOut()
 
-    def process_in_on(self):
+    def flow_signal(self):
         if self.port_in.read() == 1:
             self.port_out.set_on()
             self.port_in.set_off()
-        
+        else:
+            self.port_out.set_off()
         
 
         
