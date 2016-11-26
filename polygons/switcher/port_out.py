@@ -1,4 +1,4 @@
-from port import PortBoolean as Port
+from .port import PortBoolean as Port
 
 class PortOut(Port):
 
