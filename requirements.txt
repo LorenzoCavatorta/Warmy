@@ -1,3 +1,5 @@
 behave
 nose
 pyserial
+
+# sudo apt-get install arduino
