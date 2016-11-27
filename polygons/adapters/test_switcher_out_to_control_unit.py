@@ -14,4 +14,5 @@ class can_communicate_with_control_unit(TestCase):
 
     def test_can_write_port_out(self):
         self.adapter.set_port_out(1)
-        self.assertTrue(self.adapter.read_port_out() == 1)
+        result = int(self.adapter.read_port_out())
+        self.assertTrue(result == 1)
