@@ -8,6 +8,7 @@ class ServiceHelper():
 
     def start(self):
         command_body = 'celery worker -A {0} --loglevel={1}'.format(self.name, self.loglevel)
+        import pdb;pdb.set_trace()
         proc = subprocess.Popen(
             command_body.split(),
             stdout=subprocess.PIPE,
