@@ -1,0 +1,19 @@
+.PHONY: usage clean build tests lint
+
+usage:
+	@echo "Available commands:"
+	@echo "\tclean - stop the running containers and remove the volumes and network"
+	@echo "\tbuild - build the docker image"
+	@echo "\ttests - run tests"
+
+clean:
+	docker-compose down
+
+build: clean
+	docker-compose build
+
+tests: build
+	docker-compose run -e BASE=/Warmy bash -c "behave /....tests"
+
+dev: build
+	docker-compose run ######## bash

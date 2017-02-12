@@ -1,5 +1,6 @@
 behave
 nose
 pyserial
+celery
 
 # sudo apt-get install arduino

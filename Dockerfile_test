@@ -1,0 +1,12 @@
+FROM python:3.4
+
+# Copy requirements file in seperately to rest of project.
+# This allows docker to cache requirements, and so only changes to
+# requirements.txt will trigger a new pip install
+ADD requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt
+
+ADD . /Warmy
+WORKDIR /Warmy
+
+

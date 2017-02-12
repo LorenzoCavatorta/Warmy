@@ -16,3 +16,4 @@ class can_communicate_with_control_unit(TestCase):
         self.adapter.set_port_out(1)
         result = int(self.adapter.read_port_out())
         self.assertTrue(result == 1)
+

@@ -1,5 +1,5 @@
-from port_in import PortIn
-from port_out import PortOut
+from .port_in import PortIn
+from .port_out import PortOut
 class Core(object):
 
     
