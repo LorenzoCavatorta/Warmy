@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+worker_name='the_one_and_only_worker'
+
+if [ "$1" == "up" ]; then
+    echo 'starting Warmy worker'
+    celery multi start "${worker_name}" -A Warmy -l info
+    wait
+    echo 'Warmy worker started'
+fi
+
+if [ "$1" == "down" ]; then
+    echo 'stopping Warmy worker'
+    celery multi stopwait "${worker_name}" -A Warmy -l info
+    echo 'Warmy worker stopped'
+fi
+
+if [ "$1" == "status" ]; then
+    worker_status=$(celery status -A Warmy | grep "${worker_name}" | grep OK | wc -l )
+    if [ ${worker_status} -ge 1 ]; then
+        echo -n 'up and running'
+    else
+        echo -n 'Warmy worker is not active'
+    fi
+fi

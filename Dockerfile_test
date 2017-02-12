@@ -1,5 +1,4 @@
 FROM python:3.4
-MAINTAINER "DataSystems"
 
 # Copy requirements file in seperately to rest of project.
 # This allows docker to cache requirements, and so only changes to
@@ -7,8 +6,7 @@ MAINTAINER "DataSystems"
 ADD requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
-ADD . /essence-hive
-WORKDIR /essence-hive
+ADD . /Warmy
+WORKDIR /Warmy
 
-ENV PYTHONPATH=/essence-hive:$PYTHONPATH
-ENV ESSENCE_HIVE_BASE=/essence-hive
+
